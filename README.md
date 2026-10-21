@@ -39,7 +39,7 @@ Cada paquete necesita:
 
 - el componente y su `schema` (`props` con `type`, `options`, `default`, `min`, `max` y `description`)
 - un `Demo` exportado desde `src/demo.tsx`
-- `src/styles.css`, publicado como `@ai-components/<nombre>/styles.css`
+- `src/styles.css`, publicado como `@componentes-ia/<nombre>/styles.css`
 - `component.json` con `name`, `title`, `slug` y `description`
 
 El nombre va en kebab-case. `core` está reservado para tokens, `cn` y `useReducedMotion`.
@@ -52,23 +52,23 @@ npm run build-index
 
 ## Publicar
 
-Los paquetes son públicos bajo el scope `@ai-components`.
+Los paquetes son públicos bajo el scope `@componentes-ia`.
 
 ```bash
 npm run build
-npm publish -w @ai-components/core --access public
-npm publish -w @ai-components/agent-task --access public
-npm publish -w @ai-components/agent-composer --access public
-npm publish -w @ai-components/thinking-block --access public
-npm publish -w @ai-components/approval-card --access public
+npm publish -w @componentes-ia/core --access public
+npm publish -w @componentes-ia/agent-task --access public
+npm publish -w @componentes-ia/agent-composer --access public
+npm publish -w @componentes-ia/thinking-block --access public
+npm publish -w @componentes-ia/approval-card --access public
 ```
 
 Publica `core` primero. Cada paquete corre `prepublishOnly`, así que `dist/` queda al día. Quien lo instale importa el componente y los dos CSS:
 
 ```tsx
-import { AgentTask } from "@ai-components/agent-task";
-import "@ai-components/core/styles.css";
-import "@ai-components/agent-task/styles.css";
+import { AgentTask } from "@componentes-ia/agent-task";
+import "@componentes-ia/core/styles.css";
+import "@componentes-ia/agent-task/styles.css";
 ```
 
 ## Estructura

@@ -1,7 +1,7 @@
 "use client";
 
-import { AgentStatusIndicator } from "@ai-components/agent-task";
-import { cn, Shimmer, useReducedMotion } from "@ai-components/core";
+import { AgentStatusIndicator } from "@componentes-ia/agent-task";
+import { cn, Shimmer, useReducedMotion } from "@componentes-ia/core";
 import {
   type CSSProperties,
   type KeyboardEvent,

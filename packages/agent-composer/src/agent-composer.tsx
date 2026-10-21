@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@ai-components/core";
+import { cn } from "@componentes-ia/core";
 import { type FormEvent, type KeyboardEvent, useEffect, useId, useRef, useState } from "react";
 
 export type AgentComposerProps = {

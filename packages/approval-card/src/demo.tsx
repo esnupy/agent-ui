@@ -1,6 +1,6 @@
 "use client";
 
-import { AgentStatusIndicator } from "@ai-components/agent-task";
+import { AgentStatusIndicator } from "@componentes-ia/agent-task";
 import { type CSSProperties, useLayoutEffect, useRef, useState } from "react";
 import { ApprovalCard } from "./approval-card";
 import type { ApprovalDecision, ApprovalKind, ApprovalRisk } from "./schema";

@@ -1,4 +1,4 @@
-import type { ComponentSchema, PropSchema } from "@ai-components/core";
+import type { ComponentSchema, PropSchema } from "@componentes-ia/core";
 
 /** Valores que salen de los controles del playground. */
 export type PlaygroundValues = Record<string, string | number | boolean>;
@@ -140,7 +140,7 @@ export const buildUsage = (input: {
 
   return [
     `import { ${input.name} } from "${input.packageName}";`,
-    'import "@ai-components/core/styles.css";',
+    'import "@componentes-ia/core/styles.css";',
     `import "${input.packageName}/styles.css";`,
     "",
     "export function Example() {",
@@ -185,7 +185,7 @@ export const buildPrompt = (input: {
     "",
     "Imports:",
     `import { ${input.name} } from "${input.packageName}";`,
-    'import "@ai-components/core/styles.css";',
+    'import "@componentes-ia/core/styles.css";',
     `import "${input.packageName}/styles.css";`,
     "",
     "Props:",

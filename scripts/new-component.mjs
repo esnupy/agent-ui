@@ -74,7 +74,7 @@ const replaceTokens = async (directory, kebab, pascal, title) => {
 const addWebDependency = async (kebab) => {
   const manifestPath = join(root, "apps/web/package.json");
   const source = await readFile(manifestPath, "utf8");
-  const name = `@ai-components/${kebab}`;
+  const name = `@componentes-ia/${kebab}`;
 
   if (source.includes(`"${name}"`)) return;
 
@@ -127,7 +127,7 @@ run(biome, ["check", "--write", target]);
 await addWebDependency(kebab);
 
 run(npm, ["install"]);
-run(npm, ["run", "build", "--workspace", `@ai-components/${kebab}`]);
+run(npm, ["run", "build", "--workspace", `@componentes-ia/${kebab}`]);
 run(process.execPath, ["scripts/build-index.mjs"]);
 
 console.log(`Listo: packages/${kebab} y /components/${kebab}`);

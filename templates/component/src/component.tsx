@@ -1,4 +1,4 @@
-import { cn } from "@ai-components/core";
+import { cn } from "@componentes-ia/core";
 
 export type __PASCAL__Props = {
   /** Texto visible. */

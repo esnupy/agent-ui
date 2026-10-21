@@ -1,6 +1,6 @@
 "use client";
 
-import type { AgentState } from "@ai-components/agent-task";
+import type { AgentState } from "@componentes-ia/agent-task";
 import { useEffect, useRef, useState } from "react";
 import { HOLD_MS } from "./format";
 import type { ApprovalDecision, ApprovalTimeout } from "./schema";

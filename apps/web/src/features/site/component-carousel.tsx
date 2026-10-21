@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducedMotion } from "@ai-components/core";
+import { useReducedMotion } from "@componentes-ia/core";
 import { type FocusEvent, useEffect, useRef } from "react";
 import { components } from "@/generated/components";
 import { DemoFrame } from "./demo-frame";

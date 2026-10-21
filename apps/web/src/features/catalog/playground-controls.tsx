@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentSchema } from "@ai-components/core";
+import type { ComponentSchema } from "@componentes-ia/core";
 import { formatPropType, type PlaygroundValues } from "@/lib/prompt";
 
 type PlaygroundControlsProps = {

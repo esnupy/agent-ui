@@ -52,7 +52,7 @@ const readComponents = async () => {
 };
 
 const renderRegistry = (components) => {
-  const imports = ['import "@ai-components/core/styles.css";'];
+  const imports = ['import "@componentes-ia/core/styles.css";'];
 
   components.forEach((component, index) => {
     imports.push(
@@ -80,7 +80,7 @@ const renderRegistry = (components) => {
   return `/* Este archivo lo genera scripts/build-index.mjs. No lo edites a mano. */
 
 ${imports.join("\n")}
-import type { ComponentSchema } from "@ai-components/core";
+import type { ComponentSchema } from "@componentes-ia/core";
 import type { ReactNode } from "react";
 
 export type ComponentEntry = {

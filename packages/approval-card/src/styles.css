@@ -1,8 +1,8 @@
-@import "@ai-components/agent-task/styles.css";
+@import "@componentes-ia/agent-task/styles.css";
 
 /*
  * ApprovalCard.
- * El color sale de los tokens de @ai-components/core.
+ * El color sale de los tokens de @componentes-ia/core.
  * El indicador reutiliza el CSS de agent-task.
  */
 

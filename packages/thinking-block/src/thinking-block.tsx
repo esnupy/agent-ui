@@ -1,6 +1,6 @@
 "use client";
 
-import { cn, useReducedMotion } from "@ai-components/core";
+import { cn, useReducedMotion } from "@componentes-ia/core";
 import { type CSSProperties, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { formatDuration, isPinnedToBottom } from "./format";
 import type { ThinkingStatus } from "./schema";

@@ -1,5 +1,5 @@
 {
-  "name": "@ai-components/agent-composer",
+  "name": "@componentes-ia/agent-composer",
   "version": "0.1.0",
   "description": "Compositor de mensaje para interfaces de agentes.",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@ai-components/core": "*"
+    "@componentes-ia/core": "*"
   },
   "peerDependencies": {
     "react": "^19.0.0"

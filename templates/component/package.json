@@ -1,5 +1,5 @@
 {
-  "name": "@ai-components/__KEBAB__",
+  "name": "@componentes-ia/__KEBAB__",
   "version": "0.1.0",
   "description": "__TITLE__",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@ai-components/core": "*"
+    "@componentes-ia/core": "*"
   },
   "peerDependencies": {
     "react": "^19.0.0"

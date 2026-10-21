@@ -1,4 +1,4 @@
-import type { ComponentSchema } from "@ai-components/core";
+import type { ComponentSchema } from "@componentes-ia/core";
 import { AGENT_SIZES, AGENT_STATES } from "./states";
 
 export const schema = {

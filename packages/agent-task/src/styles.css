@@ -1,6 +1,6 @@
 /*
  * AgentTask y AgentStatusIndicator.
- * El color sale de los tokens de @ai-components/core, con fallback claro.
+ * El color sale de los tokens de @componentes-ia/core, con fallback claro.
  */
 
 .agent-status {

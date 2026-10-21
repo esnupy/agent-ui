@@ -1,4 +1,4 @@
-import type { ComponentSchema } from "@ai-components/core";
+import type { ComponentSchema } from "@componentes-ia/core";
 import { describe, expect, it } from "vitest";
 import { buildComponentJsx, buildPrompt, buildUsage, getPlaygroundDefaults } from "./prompt";
 
@@ -74,13 +74,13 @@ describe("prompt", () => {
     const values = getPlaygroundDefaults(schema);
     const prompt = buildPrompt({
       name: "AgentTask",
-      packageName: "@ai-components/agent-task",
+      packageName: "@componentes-ia/agent-task",
       description: schema.description,
       schema,
       values,
     });
 
-    expect(prompt).toContain("Use AgentTask from @ai-components/agent-task.");
+    expect(prompt).toContain("Use AgentTask from @componentes-ia/agent-task.");
     expect(prompt).toContain('current "thinking"');
     expect(prompt).toContain("min 0.25");
     expect(prompt).toContain("max 3");
@@ -90,14 +90,14 @@ describe("prompt", () => {
   it("arma el snippet de uso con los CSS del paquete", () => {
     const usage = buildUsage({
       name: "AgentTask",
-      packageName: "@ai-components/agent-task",
+      packageName: "@componentes-ia/agent-task",
       schema,
       values: getPlaygroundDefaults(schema),
     });
 
-    expect(usage).toContain('from "@ai-components/agent-task"');
-    expect(usage).toContain('import "@ai-components/core/styles.css"');
-    expect(usage).toContain('import "@ai-components/agent-task/styles.css"');
+    expect(usage).toContain('from "@componentes-ia/agent-task"');
+    expect(usage).toContain('import "@componentes-ia/core/styles.css"');
+    expect(usage).toContain('import "@componentes-ia/agent-task/styles.css"');
     expect(usage).toContain("return (");
   });
 });

@@ -1,5 +1,5 @@
 {
-  "name": "@ai-components/web",
+  "name": "@componentes-ia/web",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -9,11 +9,11 @@
     "typecheck": "next typegen && tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@ai-components/approval-card": "*",
-    "@ai-components/thinking-block": "*",
-    "@ai-components/agent-composer": "*",
-    "@ai-components/agent-task": "*",
-    "@ai-components/core": "*",
+    "@componentes-ia/approval-card": "*",
+    "@componentes-ia/thinking-block": "*",
+    "@componentes-ia/agent-composer": "*",
+    "@componentes-ia/agent-task": "*",
+    "@componentes-ia/core": "*",
     "next": "^16.4.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"

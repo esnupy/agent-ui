@@ -1,4 +1,4 @@
-import type { ComponentSchema } from "@ai-components/core";
+import type { ComponentSchema } from "@componentes-ia/core";
 
 export const schema = {
   name: "__PASCAL__",

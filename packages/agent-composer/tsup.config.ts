@@ -11,7 +11,7 @@ export default defineConfig({
   clean: true,
   target: "es2022",
   banner: { js: '"use client";' },
-  external: ["react", "react-dom", "react/jsx-runtime", "@ai-components/core"],
+  external: ["react", "react-dom", "react/jsx-runtime", "@componentes-ia/core"],
   async onSuccess() {
     await mkdir("dist", { recursive: true });
     await copyFile("src/styles.css", "dist/styles.css");

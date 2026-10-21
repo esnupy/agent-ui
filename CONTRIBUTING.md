@@ -23,7 +23,7 @@ npm run new-component -- mi-componente
 Después reemplaza la plantilla con el componente real. Mantén:
 
 - TypeScript estricto y ESM.
-- CSS propio, con las variables de `@ai-components/core`. Sin Tailwind dentro de `packages/`.
+- CSS propio, con las variables de `@componentes-ia/core`. Sin Tailwind dentro de `packages/`.
 - React como única peer dependency. Nada de runtime extra.
 - `schema` con tipo, opciones, default, mínimo, máximo y descripción. El sitio arma la tabla, el playground y el prompt desde ahí.
 - `Demo` en `src/demo.tsx`.

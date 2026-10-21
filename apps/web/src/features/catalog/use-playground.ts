@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentSchema } from "@ai-components/core";
+import type { ComponentSchema } from "@componentes-ia/core";
 import { useMemo, useState } from "react";
 import { getPlaygroundDefaults, type PlaygroundValues, toPreviewProps } from "@/lib/prompt";
 

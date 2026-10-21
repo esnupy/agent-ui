@@ -15,8 +15,8 @@ export default defineConfig({
     "react",
     "react-dom",
     "react/jsx-runtime",
-    "@ai-components/agent-task",
-    "@ai-components/core",
+    "@componentes-ia/agent-task",
+    "@componentes-ia/core",
   ],
   async onSuccess() {
     await mkdir("dist", { recursive: true });

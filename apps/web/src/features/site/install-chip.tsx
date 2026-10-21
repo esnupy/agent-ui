@@ -9,7 +9,7 @@ type InstallChipProps = {
 /**
  * Comando de instalación en una sola línea, con botón para copiarlo.
  *
- * @param props - El comando completo, por ejemplo `npm install @ai-components/core`.
+ * @param props - El comando completo, por ejemplo `npm install @componentes-ia/core`.
  * @returns La cápsula.
  */
 export const InstallChip = ({ command }: InstallChipProps) => {

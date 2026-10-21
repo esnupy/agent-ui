@@ -1,5 +1,5 @@
 {
-  "name": "@ai-components/agent-task",
+  "name": "@componentes-ia/agent-task",
   "version": "0.1.0",
   "description": "Fila de tarea para interfaces de agentes.",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@ai-components/core": "*"
+    "@componentes-ia/core": "*"
   },
   "peerDependencies": {
     "react": "^19.0.0"

@@ -11,7 +11,7 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "turbo run build --filter=!@ai-components/web && npm run dev --workspace=@ai-components/web",
+    "dev": "turbo run build --filter=!@componentes-ia/web && npm run dev --workspace=@componentes-ia/web",
     "build": "turbo run build",
     "lint": "biome check .",
     "format": "biome check --write .",

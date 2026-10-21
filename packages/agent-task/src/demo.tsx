@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducedMotion } from "@ai-components/core";
+import { useReducedMotion } from "@componentes-ia/core";
 import { useEffect, useState } from "react";
 import { AgentTask } from "./agent-task";
 import { AGENT_STATES, type AgentState } from "./states";

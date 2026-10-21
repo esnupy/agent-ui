@@ -1,5 +1,5 @@
 {
-  "name": "@ai-components/thinking-block",
+  "name": "@componentes-ia/thinking-block",
   "version": "0.1.0",
   "description": "Bloque plegable del razonamiento de un agente.",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@ai-components/core": "*"
+    "@componentes-ia/core": "*"
   },
   "peerDependencies": {
     "react": "^19.0.0"

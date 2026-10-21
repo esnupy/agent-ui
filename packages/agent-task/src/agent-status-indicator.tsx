@@ -1,6 +1,6 @@
 "use client";
 
-import { cn, useReducedMotion } from "@ai-components/core";
+import { cn, useReducedMotion } from "@componentes-ia/core";
 import type { CSSProperties } from "react";
 import { type AgentSize, type AgentState, STATUS_LABEL } from "./states";
 

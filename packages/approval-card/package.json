@@ -1,5 +1,5 @@
 {
-  "name": "@ai-components/approval-card",
+  "name": "@componentes-ia/approval-card",
   "version": "0.1.0",
   "description": "Tarjeta para que un agente pida permiso antes de actuar.",
   "license": "MIT",
@@ -33,8 +33,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@ai-components/agent-task": "*",
-    "@ai-components/core": "*"
+    "@componentes-ia/agent-task": "*",
+    "@componentes-ia/core": "*"
   },
   "peerDependencies": {
     "react": "^19.0.0"
