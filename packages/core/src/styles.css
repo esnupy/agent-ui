@@ -1,0 +1,228 @@
+/*
+ * Tokens de color en blanco, negro y grises.
+ * El tema explícito gana sobre el sistema: data-theme en html, o la clase .dark.
+ * Sin atributo, se sigue prefers-color-scheme.
+ */
+
+:root {
+  color-scheme: light;
+  --ac-bg: #ffffff;
+  --ac-bg-subtle: #f4f4f2;
+  --ac-fg: #111111;
+  --ac-muted: #6a6a66;
+  --ac-border: #e4e4e0;
+  --ac-border-strong: #111111;
+  --ac-hover: #f1f1ee;
+  --ac-selected: #e8e8e4;
+  --ac-shimmer: #8d8d88;
+  --ac-focus: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.light) {
+    color-scheme: dark;
+    --ac-bg: #090909;
+    --ac-bg-subtle: #141414;
+    --ac-fg: #f4f4f2;
+    --ac-muted: #a3a39e;
+    --ac-border: #2a2a28;
+    --ac-border-strong: #f4f4f2;
+    --ac-hover: #171716;
+    --ac-selected: #20201e;
+    --ac-shimmer: #c8c8c2;
+    --ac-focus: #f4f4f2;
+  }
+}
+
+:root[data-theme="dark"],
+:root.dark,
+[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+  --ac-bg: #090909;
+  --ac-bg-subtle: #141414;
+  --ac-fg: #f4f4f2;
+  --ac-muted: #a3a39e;
+  --ac-border: #2a2a28;
+  --ac-border-strong: #f4f4f2;
+  --ac-hover: #171716;
+  --ac-selected: #20201e;
+  --ac-shimmer: #c8c8c2;
+  --ac-focus: #f4f4f2;
+}
+
+:root[data-theme="light"],
+:root.light,
+[data-theme="light"],
+.light {
+  color-scheme: light;
+  --ac-bg: #ffffff;
+  --ac-bg-subtle: #f4f4f2;
+  --ac-fg: #111111;
+  --ac-muted: #6a6a66;
+  --ac-border: #e4e4e0;
+  --ac-border-strong: #111111;
+  --ac-hover: #f1f1ee;
+  --ac-selected: #e8e8e4;
+  --ac-shimmer: #8d8d88;
+  --ac-focus: #111111;
+}
+
+.ac-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ac-shimmer {
+  pointer-events: none;
+}
+
+.ac-shimmer[data-text="false"] {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background-image: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 42%,
+    color-mix(in srgb, var(--ac-fg, #111111) 28%, white) 50%,
+    transparent 58%,
+    transparent 100%
+  );
+  background-size: 260% 100%;
+  background-position: 130% 0;
+  opacity: 0;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.ac-shimmer[data-text="false"][data-mode="once"] {
+  animation: ac-shimmer-once 1.15s ease forwards;
+}
+
+.ac-shimmer[data-text="false"][data-mode="loop"] {
+  opacity: 1;
+  animation: ac-shimmer-loop 2.8s linear infinite;
+}
+
+.ac-shimmer[data-text="true"] {
+  position: relative;
+  display: inline;
+  color: inherit;
+}
+
+.ac-shimmer__band {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 38%,
+    color-mix(in srgb, var(--ac-fg, #111111) 20%, white) 50%,
+    transparent 62%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  background-position: 130% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ac-shimmer[data-text="true"][data-mode="once"] .ac-shimmer__band,
+.ac-shimmer[data-text="true"][data-mode="loop"] .ac-shimmer__band {
+  opacity: 1;
+  animation: ac-shimmer-loop 2.8s linear infinite;
+}
+
+@keyframes ac-shimmer-once {
+  0% {
+    background-position: 140% 0;
+    opacity: 0;
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  100% {
+    background-position: -40% 0;
+    opacity: 0;
+  }
+}
+
+@keyframes ac-shimmer-loop {
+  0% {
+    background-position: 130% 0;
+  }
+
+  100% {
+    background-position: -40% 0;
+  }
+}
+
+[data-theme="dark"] .ac-shimmer[data-text="false"][data-mode],
+.dark .ac-shimmer[data-text="false"][data-mode] {
+  background-image: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 34%,
+    #ffffff 50%,
+    transparent 66%,
+    transparent 100%
+  );
+}
+
+[data-theme="dark"] .ac-shimmer[data-text="true"][data-mode] .ac-shimmer__band,
+.dark .ac-shimmer[data-text="true"][data-mode] .ac-shimmer__band {
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 30%,
+    #ffffff 50%,
+    transparent 70%,
+    transparent 100%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.light) .ac-shimmer[data-text="false"][data-mode] {
+    background-image: linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 34%,
+      #ffffff 50%,
+      transparent 66%,
+      transparent 100%
+    );
+  }
+
+  :root:not([data-theme="light"]):not(.light)
+    .ac-shimmer[data-text="true"][data-mode]
+    .ac-shimmer__band {
+    background-image: linear-gradient(
+      100deg,
+      transparent 0%,
+      transparent 30%,
+      #ffffff 50%,
+      transparent 70%,
+      transparent 100%
+    );
+  }
+}

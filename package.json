@@ -1,0 +1,45 @@
+{
+  "name": "ai-components",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Biblioteca de componentes React para interfaces de agentes de IA y de código.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "npm@11.9.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run build --filter=!@ai-components/web && npm run dev --workspace=@ai-components/web",
+    "build": "turbo run build",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "turbo run typecheck",
+    "test": "vitest run",
+    "build-index": "node scripts/build-index.mjs",
+    "new-component": "node scripts/new-component.mjs"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "jsdom": "^29.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3",
+    "tsup": "^8.5.1",
+    "turbo": "^2.11.10",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.12"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

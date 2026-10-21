@@ -1,0 +1,29 @@
+{
+  "name": "@ai-components/web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "next typegen && tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@ai-components/approval-card": "*",
+    "@ai-components/thinking-block": "*",
+    "@ai-components/agent-composer": "*",
+    "@ai-components/agent-task": "*",
+    "@ai-components/core": "*",
+    "next": "^16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  }
+}

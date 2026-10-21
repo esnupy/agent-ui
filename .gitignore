@@ -1,0 +1,10 @@
+node_modules
+dist
+.next
+.turbo
+coverage
+*.tsbuildinfo
+.DS_Store
+*.log
+.vercel
+apps/web/AGENTS.md

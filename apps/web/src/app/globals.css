@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif-face), "Iowan Old Style", Palatino, Georgia, serif;
+}
+
+html {
+  background: #f3f3f0;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  background: #090909;
+  color-scheme: dark;
+}
+
+::selection {
+  background: #171717;
+  color: #f6f6f3;
+}
+
+html[data-theme="dark"] ::selection {
+  background: #f4f4f1;
+  color: #111111;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+@keyframes ac-slide {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ac-slide {
+  animation: ac-slide 560ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ac-slide {
+    animation: none;
+  }
+}

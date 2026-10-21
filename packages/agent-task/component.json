@@ -1,0 +1,6 @@
+{
+  "name": "AgentTask",
+  "title": "Agent Task",
+  "slug": "agent-task",
+  "description": "Fila de una tarea de agente: indicador animado, título, rama y tiempo transcurrido."
+}
