@@ -9,6 +9,7 @@
     "typecheck": "next typegen && tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@componentes-ia/bot-avatar": "*",
     "@componentes-ia/approval-card": "*",
     "@componentes-ia/thinking-block": "*",
     "@componentes-ia/agent-composer": "*",

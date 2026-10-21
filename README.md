@@ -61,6 +61,7 @@ npm publish -w @componentes-ia/agent-task --access public
 npm publish -w @componentes-ia/agent-composer --access public
 npm publish -w @componentes-ia/thinking-block --access public
 npm publish -w @componentes-ia/approval-card --access public
+npm publish -w @componentes-ia/bot-avatar --access public
 ```
 
 Publica `core` primero. Cada paquete corre `prepublishOnly`, así que `dist/` queda al día. Quien lo instale importa el componente y los dos CSS:
@@ -71,6 +72,28 @@ import "@componentes-ia/core/styles.css";
 import "@componentes-ia/agent-task/styles.css";
 ```
 
+## Bot Avatar
+
+Mascota animada para cada agente. Pásale el id y obtienes siempre el mismo bot:
+
+```tsx
+import { BOT_PRESETS, BotAvatar, BotAvatarGroup } from "@componentes-ia/bot-avatar";
+import "@componentes-ia/core/styles.css";
+import "@componentes-ia/bot-avatar/styles.css";
+
+<BotAvatar seed={agent.id} state={busy ? "working" : "idle"} />
+<BotAvatar {...BOT_PRESETS.tito} state="speaking" level={volume} />
+<BotAvatarGroup max={4} size={40}>
+  {agents.map((agent) => <BotAvatar key={agent.id} seed={agent.id} />)}
+</BotAvatarGroup>
+```
+
+- 13 formas (`orb`, `blob`, `squircle`, `drop`, `ghost`, `gem`, `tri`, `star`, `flower`, `cloud`, `cat`, `droid`, `pill`). Al cambiar de forma, el cuerpo se transforma.
+- 8 estados: `idle`, `thinking`, `working`, `speaking`, `listening`, `sleeping`, `success`, `error`.
+- `level` (0–1) mueve la boca y las ondas con el volumen real de un agente de voz.
+- Acabados `clay`, `glossy`, `fuzzy`, `flat` y `outline`; caras `eyes`, `mouth` y `visor`; siete accesorios.
+- Un solo `requestAnimationFrame` para todos los avatares. Fuera de pantalla no calcula; con `prefers-reduced-motion` o `paused` queda en la pose del estado.
+
 ## Estructura
 
 ```text
@@ -80,6 +103,7 @@ packages/agent-task      AgentTask y AgentStatusIndicator
 packages/agent-composer  AgentComposer
 packages/thinking-block  ThinkingBlock
 packages/approval-card   ApprovalCard
+packages/bot-avatar      BotAvatar, BotAvatarGroup y el elenco BOT_PRESETS
 templates/component      plantilla del generador
 scripts/new-component.mjs
 scripts/build-index.mjs

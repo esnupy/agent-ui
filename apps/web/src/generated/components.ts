@@ -10,8 +10,11 @@ import "@componentes-ia/agent-task/styles.css";
 import { ApprovalCard, schema as schema2 } from "@componentes-ia/approval-card";
 import { Demo as Demo2 } from "@componentes-ia/approval-card/demo";
 import "@componentes-ia/approval-card/styles.css";
-import { schema as schema3, ThinkingBlock } from "@componentes-ia/thinking-block";
-import { Demo as Demo3 } from "@componentes-ia/thinking-block/demo";
+import { BotAvatar, schema as schema3 } from "@componentes-ia/bot-avatar";
+import { Demo as Demo3 } from "@componentes-ia/bot-avatar/demo";
+import "@componentes-ia/bot-avatar/styles.css";
+import { schema as schema4, ThinkingBlock } from "@componentes-ia/thinking-block";
+import { Demo as Demo4 } from "@componentes-ia/thinking-block/demo";
 import "@componentes-ia/thinking-block/styles.css";
 import type { ComponentSchema } from "@componentes-ia/core";
 import type { ReactNode } from "react";
@@ -60,13 +63,24 @@ export const components: ComponentEntry[] = [
     Demo: Demo2 as unknown as ComponentEntry["Demo"],
   },
   {
+    slug: "bot-avatar",
+    name: "BotAvatar",
+    title: "Bot Avatar",
+    description:
+      "Mascota animada para agentes: 13 formas que se transforman, 8 estados, voz y mirada que sigue al puntero.",
+    packageName: "@componentes-ia/bot-avatar",
+    Component: BotAvatar as unknown as ComponentEntry["Component"],
+    schema: schema3,
+    Demo: Demo3 as unknown as ComponentEntry["Demo"],
+  },
+  {
     slug: "thinking-block",
     name: "ThinkingBlock",
     title: "Thinking Block",
     description: "Bloque plegable del razonamiento de un agente, con brillo mientras piensa.",
     packageName: "@componentes-ia/thinking-block",
     Component: ThinkingBlock as unknown as ComponentEntry["Component"],
-    schema: schema3,
-    Demo: Demo3 as unknown as ComponentEntry["Demo"],
+    schema: schema4,
+    Demo: Demo4 as unknown as ComponentEntry["Demo"],
   },
 ];
