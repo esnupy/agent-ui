@@ -9,6 +9,7 @@
     "typecheck": "next typegen && tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@componentes-ia/agent-replay": "*",
     "@componentes-ia/agent-plan": "*",
     "@componentes-ia/agent-status": "*",
     "@componentes-ia/bot-avatar": "*",

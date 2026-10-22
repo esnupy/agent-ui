@@ -64,6 +64,7 @@ npm publish -w @componentes-ia/agent-plan --access public
 npm publish -w @componentes-ia/thinking-block --access public
 npm publish -w @componentes-ia/approval-card --access public
 npm publish -w @componentes-ia/bot-avatar --access public
+npm publish -w @componentes-ia/agent-replay --access public
 ```
 
 Publica `core` primero. Cada paquete corre `prepublishOnly`, así que `dist/` queda al día. Quien lo instale importa el componente y los dos CSS:
@@ -126,6 +127,20 @@ const steps = usePlanSimulation(plan, { interval: 900 });
 
 El encabezado muestra `3 de 7` y una barra. Al contraerlo queda solo el paso actual. El paso en curso lleva el mismo barrido de luz que Agent Status.
 
+## Agent Replay
+
+Reproductor tipo video de la ejecución de un agente. Arrastras el playhead y el escenario reconstruye el estado exacto en ese instante: el texto se escribe y se borra, el plan avanza y retrocede, las herramientas se abren y se cierran, y el diff gana o pierde líneas.
+
+```tsx
+import { AgentReplay, createMockRun } from "@componentes-ia/agent-replay";
+import "@componentes-ia/core/styles.css";
+import "@componentes-ia/agent-replay/styles.css";
+
+<AgentReplay events={events} live />
+```
+
+`useReplay(events)` da el mismo motor sin UI. `createMockRun({ seed })` arma un run de ejemplo determinista.
+
 ## Estructura
 
 ```text
@@ -138,6 +153,7 @@ packages/agent-plan      AgentPlan y usePlanSimulation
 packages/thinking-block  ThinkingBlock
 packages/approval-card   ApprovalCard
 packages/bot-avatar      BotAvatar, BotAvatarGroup y el elenco BOT_PRESETS
+packages/agent-replay    AgentReplay, useReplay y createMockRun
 templates/component      plantilla del generador
 scripts/new-component.mjs
 scripts/build-index.mjs

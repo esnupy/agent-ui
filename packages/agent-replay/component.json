@@ -1,0 +1,7 @@
+{
+  "name": "AgentReplay",
+  "title": "Agent Replay",
+  "slug": "agent-replay",
+  "description": "Reproductor de la ejecución de un agente: arrastra el playhead y el estado se reconstruye al instante.",
+  "layout": "wide"
+}

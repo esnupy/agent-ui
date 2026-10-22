@@ -44,6 +44,7 @@ const readComponents = async () => {
       title: meta.title,
       description: meta.description,
       packageName: pkg.name,
+      wide: meta.layout === "wide",
     });
   }
 
@@ -70,6 +71,7 @@ const renderRegistry = (components) => {
     title: ${JSON.stringify(component.title)},
     description: ${JSON.stringify(component.description)},
     packageName: ${JSON.stringify(component.packageName)},
+    wide: ${component.wide},
     Component: ${component.name} as unknown as ComponentEntry["Component"],
     schema: schema${index},
     Demo: Demo${index} as unknown as ComponentEntry["Demo"],
@@ -89,6 +91,8 @@ export type ComponentEntry = {
   title: string;
   description: string;
   packageName: string;
+  /** La demo necesita todo el ancho de la página. */
+  wide: boolean;
   Component: (props: Record<string, unknown>) => ReactNode;
   schema: ComponentSchema;
   Demo: () => ReactNode;

@@ -69,7 +69,7 @@ const ShowcaseBody = ({ entry }: ShowcaseBodyProps) => {
         <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-500">
           Vista en vivo del componente.
         </p>
-        <div className="mt-6 max-w-xl">
+        <div className={entry.wide ? "mt-6" : "mt-6 max-w-xl"}>
           <DemoFrame label={entry.name}>
             <LiveDemo />
           </DemoFrame>
