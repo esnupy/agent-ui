@@ -7,20 +7,23 @@ import "@componentes-ia/agent-composer/styles.css";
 import { AgentPlan, schema as schema1 } from "@componentes-ia/agent-plan";
 import { Demo as Demo1 } from "@componentes-ia/agent-plan/demo";
 import "@componentes-ia/agent-plan/styles.css";
-import { AgentStatus, schema as schema2 } from "@componentes-ia/agent-status";
-import { Demo as Demo2 } from "@componentes-ia/agent-status/demo";
+import { AgentReplay, schema as schema2 } from "@componentes-ia/agent-replay";
+import { Demo as Demo2 } from "@componentes-ia/agent-replay/demo";
+import "@componentes-ia/agent-replay/styles.css";
+import { AgentStatus, schema as schema3 } from "@componentes-ia/agent-status";
+import { Demo as Demo3 } from "@componentes-ia/agent-status/demo";
 import "@componentes-ia/agent-status/styles.css";
-import { AgentTask, schema as schema3 } from "@componentes-ia/agent-task";
-import { Demo as Demo3 } from "@componentes-ia/agent-task/demo";
+import { AgentTask, schema as schema4 } from "@componentes-ia/agent-task";
+import { Demo as Demo4 } from "@componentes-ia/agent-task/demo";
 import "@componentes-ia/agent-task/styles.css";
-import { ApprovalCard, schema as schema4 } from "@componentes-ia/approval-card";
-import { Demo as Demo4 } from "@componentes-ia/approval-card/demo";
+import { ApprovalCard, schema as schema5 } from "@componentes-ia/approval-card";
+import { Demo as Demo5 } from "@componentes-ia/approval-card/demo";
 import "@componentes-ia/approval-card/styles.css";
-import { BotAvatar, schema as schema5 } from "@componentes-ia/bot-avatar";
-import { Demo as Demo5 } from "@componentes-ia/bot-avatar/demo";
+import { BotAvatar, schema as schema6 } from "@componentes-ia/bot-avatar";
+import { Demo as Demo6 } from "@componentes-ia/bot-avatar/demo";
 import "@componentes-ia/bot-avatar/styles.css";
-import { schema as schema6, ThinkingBlock } from "@componentes-ia/thinking-block";
-import { Demo as Demo6 } from "@componentes-ia/thinking-block/demo";
+import { schema as schema7, ThinkingBlock } from "@componentes-ia/thinking-block";
+import { Demo as Demo7 } from "@componentes-ia/thinking-block/demo";
 import "@componentes-ia/thinking-block/styles.css";
 import type { ComponentSchema } from "@componentes-ia/core";
 import type { ReactNode } from "react";
@@ -31,6 +34,8 @@ export type ComponentEntry = {
   title: string;
   description: string;
   packageName: string;
+  /** La demo necesita todo el ancho de la página. */
+  wide: boolean;
   Component: (props: Record<string, unknown>) => ReactNode;
   schema: ComponentSchema;
   Demo: () => ReactNode;
@@ -43,6 +48,7 @@ export const components: ComponentEntry[] = [
     title: "Agent Composer",
     description: "Campo de mensaje con adjuntar, modelo, voz y enviar.",
     packageName: "@componentes-ia/agent-composer",
+    wide: false,
     Component: AgentComposer as unknown as ComponentEntry["Component"],
     schema: schema0,
     Demo: Demo0 as unknown as ComponentEntry["Demo"],
@@ -53,9 +59,22 @@ export const components: ComponentEntry[] = [
     title: "Agent Plan",
     description: "Plan en vivo del agente: una lista de pasos que se van completando.",
     packageName: "@componentes-ia/agent-plan",
+    wide: false,
     Component: AgentPlan as unknown as ComponentEntry["Component"],
     schema: schema1,
     Demo: Demo1 as unknown as ComponentEntry["Demo"],
+  },
+  {
+    slug: "agent-replay",
+    name: "AgentReplay",
+    title: "Agent Replay",
+    description:
+      "Reproductor de la ejecución de un agente: arrastra el playhead y el estado se reconstruye al instante.",
+    packageName: "@componentes-ia/agent-replay",
+    wide: true,
+    Component: AgentReplay as unknown as ComponentEntry["Component"],
+    schema: schema2,
+    Demo: Demo2 as unknown as ComponentEntry["Demo"],
   },
   {
     slug: "agent-status",
@@ -64,9 +83,10 @@ export const components: ComponentEntry[] = [
     description:
       "Indicador de que el agente está trabajando: puntos animados y una palabra con brillo.",
     packageName: "@componentes-ia/agent-status",
+    wide: false,
     Component: AgentStatus as unknown as ComponentEntry["Component"],
-    schema: schema2,
-    Demo: Demo2 as unknown as ComponentEntry["Demo"],
+    schema: schema3,
+    Demo: Demo3 as unknown as ComponentEntry["Demo"],
   },
   {
     slug: "agent-task",
@@ -75,9 +95,10 @@ export const components: ComponentEntry[] = [
     description:
       "Fila de una tarea de agente: indicador animado, título, rama y tiempo transcurrido.",
     packageName: "@componentes-ia/agent-task",
+    wide: false,
     Component: AgentTask as unknown as ComponentEntry["Component"],
-    schema: schema3,
-    Demo: Demo3 as unknown as ComponentEntry["Demo"],
+    schema: schema4,
+    Demo: Demo4 as unknown as ComponentEntry["Demo"],
   },
   {
     slug: "approval-card",
@@ -85,9 +106,10 @@ export const components: ComponentEntry[] = [
     title: "Approval Card",
     description: "Tarjeta para que un agente pida permiso antes de actuar.",
     packageName: "@componentes-ia/approval-card",
+    wide: false,
     Component: ApprovalCard as unknown as ComponentEntry["Component"],
-    schema: schema4,
-    Demo: Demo4 as unknown as ComponentEntry["Demo"],
+    schema: schema5,
+    Demo: Demo5 as unknown as ComponentEntry["Demo"],
   },
   {
     slug: "bot-avatar",
@@ -96,9 +118,10 @@ export const components: ComponentEntry[] = [
     description:
       "Mascota animada para agentes: 13 formas que se transforman, 8 estados, voz y mirada que sigue al puntero.",
     packageName: "@componentes-ia/bot-avatar",
+    wide: false,
     Component: BotAvatar as unknown as ComponentEntry["Component"],
-    schema: schema5,
-    Demo: Demo5 as unknown as ComponentEntry["Demo"],
+    schema: schema6,
+    Demo: Demo6 as unknown as ComponentEntry["Demo"],
   },
   {
     slug: "thinking-block",
@@ -106,8 +129,9 @@ export const components: ComponentEntry[] = [
     title: "Thinking Block",
     description: "Bloque plegable del razonamiento de un agente, con brillo mientras piensa.",
     packageName: "@componentes-ia/thinking-block",
+    wide: false,
     Component: ThinkingBlock as unknown as ComponentEntry["Component"],
-    schema: schema6,
-    Demo: Demo6 as unknown as ComponentEntry["Demo"],
+    schema: schema7,
+    Demo: Demo7 as unknown as ComponentEntry["Demo"],
   },
 ];
