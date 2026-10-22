@@ -59,6 +59,8 @@ npm run build
 npm publish -w @componentes-ia/core --access public
 npm publish -w @componentes-ia/agent-task --access public
 npm publish -w @componentes-ia/agent-composer --access public
+npm publish -w @componentes-ia/agent-status --access public
+npm publish -w @componentes-ia/agent-plan --access public
 npm publish -w @componentes-ia/thinking-block --access public
 npm publish -w @componentes-ia/approval-card --access public
 npm publish -w @componentes-ia/bot-avatar --access public
@@ -94,6 +96,36 @@ import "@componentes-ia/bot-avatar/styles.css";
 - Acabados `clay`, `glossy`, `fuzzy`, `flat` y `outline`; caras `eyes`, `mouth` y `visor`; siete accesorios.
 - Un solo `requestAnimationFrame` para todos los avatares. Fuera de pantalla no calcula; con `prefers-reduced-motion` o `paused` queda en la pose del estado.
 
+## Agent Status
+
+Indicador de “el agente está trabajando”: tres puntos y una palabra que rota con un barrido de luz. Úsalo mientras el copiloto prepara la respuesta, antes del primer token.
+
+```tsx
+import { AgentStatus } from "@componentes-ia/agent-status";
+import "@componentes-ia/core/styles.css";
+import "@componentes-ia/agent-status/styles.css";
+
+{waiting ? <AgentStatus /> : <p>{reply}</p>}
+```
+
+`status` deja el texto fijo. `variant` elige puntos, brillo o los dos. Con `prefers-reduced-motion` se queda quieto.
+
+## Agent Plan
+
+Plan en vivo, al estilo de una lista de pendientes: los pasos pasan de pendientes a en curso y luego a listos mientras el agente trabaja.
+
+```tsx
+import { AgentPlan, usePlanSimulation } from "@componentes-ia/agent-plan";
+import "@componentes-ia/core/styles.css";
+import "@componentes-ia/agent-plan/styles.css";
+
+const steps = usePlanSimulation(plan, { interval: 900 });
+
+<AgentPlan steps={steps} />
+```
+
+El encabezado muestra `3 de 7` y una barra. Al contraerlo queda solo el paso actual. El paso en curso lleva el mismo barrido de luz que Agent Status.
+
 ## Estructura
 
 ```text
@@ -101,6 +133,8 @@ apps/web                 sitio Next.js
 packages/core            tokens, cn, useReducedMotion, Shimmer
 packages/agent-task      AgentTask y AgentStatusIndicator
 packages/agent-composer  AgentComposer
+packages/agent-status    AgentStatus
+packages/agent-plan      AgentPlan y usePlanSimulation
 packages/thinking-block  ThinkingBlock
 packages/approval-card   ApprovalCard
 packages/bot-avatar      BotAvatar, BotAvatarGroup y el elenco BOT_PRESETS

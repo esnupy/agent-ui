@@ -1,0 +1,6 @@
+{
+  "name": "AgentStatus",
+  "title": "Agent Status",
+  "slug": "agent-status",
+  "description": "Indicador de que el agente está trabajando: puntos animados y una palabra con brillo."
+}
